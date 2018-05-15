@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label fx:id="label" alignment="TOP_CENTER" layoutY="36.0" text="Вас приветствует Мастер создания библиотек!" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button alignment="TOP_CENTER" layoutX="190.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleButton" text="Отоброзить текущую библиотеку" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" />
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Библиотека">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#createLib" text="Создать библиотеку" />
+                <MenuItem mnemonicParsing="false" onAction="#loadLib" text="Загрузить библиотеку из БД" />
+                <MenuItem mnemonicParsing="false" text="Сохранить библиотека в БД" />
+                <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Редактировать ресурсы">
+            <items>
+                <Menu mnemonicParsing="false" text="Добавить ресурс">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Картографический ресурс" />
+                            <MenuItem mnemonicParsing="false" text="Музыкальный ресурс" />
+                            <MenuItem mnemonicParsing="false" text="Печатный ресурс" />
+                        </items>
+                    </Menu>
+              <MenuItem mnemonicParsing="false" text="Удалить ресурс" />
+                  <Menu mnemonicParsing="false" text="Редактировать ресурс">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Картографический ресурс" />
+                        <MenuItem mnemonicParsing="false" text="Музыкальный ресурс" />
+                        <MenuItem mnemonicParsing="false" text="Печатный ресурс" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Просмотр ресурсов">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Все ресурсы" />
+                      <MenuItem mnemonicParsing="false" text="Картографические ресурсы" />
+                      <MenuItem mnemonicParsing="false" text="Музыкальные ресурсы" />
+                      <MenuItem mnemonicParsing="false" text="Печатные ресурсы" />
+                  <MenuItem mnemonicParsing="false" text="Сохранить все ресурсы в файл" />
+                </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Помощ">
+            <items>
+              <MenuItem mnemonicParsing="false" text="О программе" />
+            </items>
+          </Menu>
+
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

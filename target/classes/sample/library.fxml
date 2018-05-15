@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LibraryController">
+   <children>
+      <Label alignment="TOP_CENTER" layoutY="14.0" text=" Заполните поля для создания новой библиотеки" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+       <Button alignment="TOP_CENTER" layoutX="232.0" layoutY="167.0" mnemonicParsing="false" onAction="#create" text="Создать" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="268.0" />
+      <HBox alignment="TOP_CENTER" layoutX="132.0" layoutY="73.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="Название библиотеки" />
+            <TextField fx:id="name" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="133.0" layoutY="99.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="ID библиотеки" />
+            <TextField fx:id="libId" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="132.0" layoutY="125.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="ID страны" />
+           <TextField fx:id="countryId" />
+         </children>
+      </HBox>
+      <Label fx:id="label" alignment="TOP_CENTER" layoutX="268.0" layoutY="209.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>
