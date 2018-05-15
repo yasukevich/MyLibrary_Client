@@ -19,7 +19,6 @@ public class Controller {
     @FXML private Label label;
 
     private Main main;
-    Library lib=new Library();
 
     public void setMain(Main main){
         this.main=main;
@@ -37,8 +36,8 @@ public class Controller {
             FXMLLoader loader=new FXMLLoader(Main.class.getResource("library.fxml"));
             AnchorPane pane=loader.load();
 
-            LibraryController libController=new LibraryController();
-            libController.setLib(lib);
+            LibraryController libraryController=loader.getController();
+            libraryController.setMain(main);
 
             primaryStage.setScene(new Scene(pane, 600, 250));
             primaryStage.show();
@@ -49,13 +48,13 @@ public class Controller {
 
     public void handleButton(){
         try {
-            if(lib.getName()==null) throw new LibraryNotFoundException("Create library or load it from DB.");
-            label.setText(lib.toString());
+            if(main.lib.getName()==null) throw new LibraryNotFoundException("Create library or load it from DB.");
+            label.setText(main.lib.toString());
         } catch(LibraryNotFoundException noLib){
             label.setText(noLib.getMessage());
         }
     }
     public void loadLib(){
-        NetworkHelper.passValue(1,lib);
+        NetworkHelper.passValue(2,main.lib);
     }
 }

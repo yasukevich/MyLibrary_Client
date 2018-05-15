@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Library;
+import model.User;
 import net.NetworkHelper;
 
 import java.io.*;
@@ -12,6 +14,10 @@ import java.io.*;
 public class Main extends Application {
 
     private Stage primaryStage;
+    Controller mainController;
+
+    Library lib = new Library();
+    User user=new User();
 
     @Override
     public void start(Stage primaryStage){
@@ -28,7 +34,7 @@ public class Main extends Application {
             FXMLLoader loader=new FXMLLoader(Main.class.getResource("sample.fxml"));
             AnchorPane pane=loader.load();
 
-            Controller mainController=loader.getController();
+            mainController=loader.getController();
             mainController.setMain(this);
 
             primaryStage.setScene(new Scene(pane, 810, 520));
