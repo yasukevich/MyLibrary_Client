@@ -1,6 +1,7 @@
 package net;
 
 import model.Library;
+import model.User;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -29,9 +30,18 @@ public class NetworkHelper {
 
     public static void passValue(int choise,Library lib){
         try{
-            Responce responce=new Responce(lib,choise);
-            coos.writeObject(responce);
+            Request request =new Request(lib,choise);
+            coos.writeObject(request);
             lib=(Library)cois.readObject();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static void passValue(int choise, User user){
+        try{
+            Request request =new Request(user,choise);
+            coos.writeObject(request);
+            //lib=(Library)cois.readObject();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

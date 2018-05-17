@@ -22,11 +22,29 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
 
-        NetworkHelper.connect();
+        loginWindow();
 
-        primaryStage.setTitle("Library wizard");
+       /* primaryStage.setTitle("Library wizard");
         this.primaryStage=primaryStage;
-        mainWindow();
+        mainWindow();*/
+    }
+
+    public void loginWindow(){
+        try{
+            NetworkHelper.connect();
+
+            Stage loginStage=new Stage();
+            FXMLLoader loader=new FXMLLoader(Main.class.getResource("login.fxml"));
+            AnchorPane loginPane=loader.load();
+
+            LoginController loginController=loader.getController();
+            loginController.setMain(this);
+
+            loginStage.setScene(new Scene(loginPane));
+            loginStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void mainWindow(){
